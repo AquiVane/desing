@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="260" viewBox="0 0 1100 260" role="img" aria-label="DESIGN by COSMART logo compact">
+
+<defs>
+  <linearGradient id="redGrad" x1="56" y1="48" x2="202" y2="210" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#E8192C"/>
+    <stop offset="1" stop-color="#B81220"/>
+  </linearGradient>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.18"/>
+  </filter>
+</defs>
+
+<rect width="1100" height="260" fill="none"/>
+<g transform="translate(32 32) scale(.765)">
+  
+
+<g filter="url(#softShadow)">
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="#0D1A40"/>
+  <circle cx="128" cy="128" r="72" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="13"/>
+  <path d="M84 63H123C165 63 196 92 196 128C196 164 165 193 123 193H84" fill="none" stroke="#FFFFFF" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M137 51L173 136L130 124L84 205L119 117L137 51Z" fill="url(#redGrad)"/>
+  <path d="M137 51L173 136L130 124L119 117L137 51Z" fill="#FF4A5A" opacity="0.55"/>
+  <circle cx="128" cy="128" r="8" fill="#FFFFFF"/>
+</g>
+
+</g>
+<g transform="translate(255 62)">
+  <text x="0" y="84" font-family="Space Grotesk, Noto Sans, Arial, sans-serif" font-weight="800" font-size="92" letter-spacing="-3.6" fill="#0D1A40">DESIGN</text>
+  <rect x="4" y="118" width="78" height="7" rx="3.5" fill="#E8192C"/>
+  <text x="100" y="132" font-family="Space Mono, Noto Sans Mono, monospace" font-weight="600" font-size="34" letter-spacing="1.5" fill="#1A1A12">by COSMART</text>
+</g>
+</svg>

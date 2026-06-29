@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
+  <rect width="1800" height="1200" fill="#F8F8F6"/>
+  <text x="90" y="115" font-family="Space Grotesk, Noto Sans, Arial, sans-serif" font-size="48" font-weight="800" fill="#0D1A40">COSMART DESIGN — logo &amp; favicon</text>
+  <text x="90" y="165" font-family="Space Grotesk, Noto Sans, Arial, sans-serif" font-size="25" fill="#6B7280">Concepto: brújula + dirección visual + sistema digital. Rojo DESIGN, azul COSMART.</text>
+  <g transform="translate(90 235)">
+    <rect width="1620" height="300" rx="36" fill="#FFFFFF"/>
+    <g transform="translate(40 34) scale(.47)">
+
+<defs>
+  <linearGradient id="redGrad" x1="56" y1="48" x2="202" y2="210" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#E8192C"/>
+    <stop offset="1" stop-color="#B81220"/>
+  </linearGradient>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.18"/>
+  </filter>
+</defs>
+
+<rect width="1600" height="480" fill="none"/>
+<g transform="translate(72 100) scale(1.06)">
+  
+
+<g filter="url(#softShadow)">
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="#0D1A40"/>
+  <circle cx="128" cy="128" r="72" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="13"/>
+  <path d="M84 63H123C165 63 196 92 196 128C196 164 165 193 123 193H84" fill="none" stroke="#FFFFFF" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M137 51L173 136L130 124L84 205L119 117L137 51Z" fill="url(#redGrad)"/>
+  <path d="M137 51L173 136L130 124L119 117L137 51Z" fill="#FF4A5A" opacity="0.55"/>
+  <circle cx="128" cy="128" r="8" fill="#FFFFFF"/>
+</g>
+
+</g>
+<g transform="translate(410 137)">
+  <text x="0" y="116" font-family="Space Grotesk, Noto Sans, Arial, sans-serif" font-weight="800" font-size="128" letter-spacing="-5" fill="#0D1A40">DESIGN</text>
+  <rect x="4" y="156" width="112" height="8" rx="4" fill="#E8192C"/>
+  <text x="134" y="170" font-family="Space Mono, Noto Sans Mono, monospace" font-weight="600" font-size="45" letter-spacing="2" fill="#1A1A12">by COSMART</text>
+  <text x="5" y="230" font-family="Space Grotesk, Noto Sans, Arial, sans-serif" font-weight="500" font-size="28" letter-spacing="1" fill="#6B7280">identidad visual · branding digital · landing pages</text>
+</g>
+</g>
+  </g>
+  <g transform="translate(90 590)">
+    <rect width="940" height="300" rx="36" fill="#0D1A40"/>
+    <g transform="translate(40 34) scale(.47)">
+
+<defs>
+  <linearGradient id="redGrad" x1="56" y1="48" x2="202" y2="210" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#E8192C"/>
+    <stop offset="1" stop-color="#B81220"/>
+  </linearGradient>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.18"/>
+  </filter>
+</defs>
+
+<rect width="1600" height="480" fill="#0D1A40"/>
+<g transform="translate(72 100) scale(1.06)">
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="#101F50" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <circle cx="128" cy="128" r="72" fill="none" stroke="#FFFFFF" stroke-opacity="0.19" stroke-width="13"/>
+  <path d="M84 63H123C165 63 196 92 196 128C196 164 165 193 123 193H84" fill="none" stroke="#FFFFFF" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M137 51L173 136L130 124L84 205L119 117L137 51Z" fill="url(#redGrad)"/>
+  <path d="M137 51L173 136L130 124L119 117L137 51Z" fill="#FF4A5A" opacity="0.55"/>
+  <circle cx="128" cy="128" r="8" fill="#FFFFFF"/>
+</g>
+<g transform="translate(410 137)">
+  <text x="0" y="116" font-family="Space Grotesk, Noto Sans, Arial, sans-serif" font-weight="800" font-size="128" letter-spacing="-5" fill="#FFFFFF">DESIGN</text>
+  <rect x="4" y="156" width="112" height="8" rx="4" fill="#E8192C"/>
+  <text x="134" y="170" font-family="Space Mono, Noto Sans Mono, monospace" font-weight="600" font-size="45" letter-spacing="2" fill="#F5F5F5">by COSMART</text>
+  <text x="5" y="230" font-family="Space Grotesk, Noto Sans, Arial, sans-serif" font-weight="500" font-size="28" letter-spacing="1" fill="#C8CEDA">identidad visual · branding digital · landing pages</text>
+</g>
+</g>
+  </g>
+  <g transform="translate(1100 590)">
+    <rect width="300" height="300" rx="36" fill="#FFFFFF"/>
+    <g transform="translate(22 22)">
+
+
+<defs>
+  <linearGradient id="redGrad" x1="56" y1="48" x2="202" y2="210" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#E8192C"/>
+    <stop offset="1" stop-color="#B81220"/>
+  </linearGradient>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.18"/>
+  </filter>
+</defs>
+
+<g filter="url(#softShadow)">
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="#0D1A40"/>
+  <circle cx="128" cy="128" r="72" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="13"/>
+  <path d="M84 63H123C165 63 196 92 196 128C196 164 165 193 123 193H84" fill="none" stroke="#FFFFFF" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M137 51L173 136L130 124L84 205L119 117L137 51Z" fill="url(#redGrad)"/>
+  <path d="M137 51L173 136L130 124L119 117L137 51Z" fill="#FF4A5A" opacity="0.55"/>
+  <circle cx="128" cy="128" r="8" fill="#FFFFFF"/>
+</g>
+
+</g>
+    <text x="340" y="116" font-family="Space Grotesk, Noto Sans, Arial, sans-serif" font-size="28" font-weight="700" fill="#0D1A40">Favicon</text>
+    <text x="340" y="158" font-family="Space Grotesk, Noto Sans, Arial, sans-serif" font-size="21" fill="#6B7280">Legible en 32px</text>
+  </g>
+  <g transform="translate(90 950)">
+    <rect x="0" y="0" width="340" height="86" rx="18" fill="#0D1A40"/>
+    <text x="32" y="55" font-family="Space Mono, Noto Sans Mono, monospace" font-size="26" fill="#FFFFFF">#0D1A40</text>
+    <rect x="380" y="0" width="340" height="86" rx="18" fill="#E8192C"/>
+    <text x="412" y="55" font-family="Space Mono, Noto Sans Mono, monospace" font-size="26" fill="#FFFFFF">#E8192C</text>
+    <rect x="760" y="0" width="340" height="86" rx="18" fill="#B81220"/>
+    <text x="792" y="55" font-family="Space Mono, Noto Sans Mono, monospace" font-size="26" fill="#FFFFFF">#B81220</text>
+    <rect x="1140" y="0" width="340" height="86" rx="18" fill="#FFFFFF" stroke="#E0E0E0"/>
+    <text x="1172" y="55" font-family="Space Mono, Noto Sans Mono, monospace" font-size="26" fill="#1A1A12">#FFFFFF</text>
+  </g>
+</svg>
