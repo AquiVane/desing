@@ -585,6 +585,7 @@ document.querySelectorAll('.fi').forEach(el => {
 // ── CONSTANTES ──
 const WORKER_URL   = 'https://mp-productos-ganadores.conglomeradocosmart.workers.dev';
 const TRAINING_URL = 'https://cosmart-training.conglomeradocosmart.workers.dev';
+const DESIGN_URL   = 'https://cosmart-design.conglomeradocosmart.workers.dev';
 const PRECIO_ARS   = 320000;
 const PRECIO_USD   = 200.00;
 
@@ -802,7 +803,7 @@ async function filesToBase64() {
 
 // ── NOTIFICACIÓN POST-PAGO ──
 async function notificarCompra(email, nombre, via, monto, datos) {
-  await fetch(TRAINING_URL + '/design/compra', {
+  await fetch(DESIGN_URL + '/design/compra', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, nombre, via, monto, datos })

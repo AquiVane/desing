@@ -692,6 +692,7 @@ document.querySelectorAll('.fi').forEach(el => {
 // ── CONSTANTES ──
 const WORKER_URL   = 'https://mp-productos-ganadores.conglomeradocosmart.workers.dev';
 const TRAINING_URL = 'https://cosmart-training.conglomeradocosmart.workers.dev';
+const DESIGN_URL   = 'https://cosmart-design.conglomeradocosmart.workers.dev';
 const PRECIO_ARS   = 400000;
 const PRECIO_USD   = 497.00;
 const MP_PUBLIC_KEY = 'APP_USR-057d290b-5af9-4b00-8a08-6753dc47aec4';
@@ -879,7 +880,7 @@ function initPayPal() {
 // ── NOTIFICACIÓN POST-PAGO ──
 async function notificarCompra(email, nombre, via, monto) {
   try {
-    await fetch(TRAINING_URL + '/taller/compra', {
+    await fetch(DESIGN_URL + '/taller/compra', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, nombre, via, monto, fecha: _fechaSeleccionada })
