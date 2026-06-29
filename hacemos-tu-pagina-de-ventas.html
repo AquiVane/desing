@@ -601,12 +601,14 @@ function switchTab(tab) {
   if (tab === 'pp') {
     tabMp.classList.remove('active'); tabPp.classList.add('active');
     mpSec.style.display = 'none'; ppSec.style.display = 'block';
-    arsP.style.display = 'none'; usdP.style.display = 'block';
+    if (arsP) arsP.style.display = 'none';
+    if (usdP) usdP.style.display = 'block';
     initPayPal();
   } else {
     tabMp.classList.add('active'); tabPp.classList.remove('active');
     mpSec.style.display = 'block'; ppSec.style.display = 'none';
-    arsP.style.display = 'block'; usdP.style.display = 'none';
+    if (arsP) arsP.style.display = 'block';
+    if (usdP) usdP.style.display = 'none';
   }
 }
 
