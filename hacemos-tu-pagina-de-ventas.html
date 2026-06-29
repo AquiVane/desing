@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Páginas de Venta — DESIGN by COSMART</title>
+<meta name="description" content="Tu producto ya tiene demanda. Dale la página que se merece. Landing de ventas con copy, imágenes IA, integración de pago, dominio y hosting. Lista en 72hs. Sin mantenimiento mensual.">
+<meta property="og:title" content="Páginas de Venta — DESIGN by COSMART">
+<meta property="og:description" content="Landing de ventas lista en 72hs. Copy, imágenes IA, MercadoPago + PayPal, dominio y hosting. Sin mantenimiento mensual.">
+<meta property="og:url" content="https://design.cosmart.com.ar/paginasdeventa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AYuQX3JJShvSkgNn0C195h3GEHGiKNtx44X3wd_5PEoBI1iinpysmDzNRqdZ7blNuZvFWIwcwhc9qiOP&currency=USD&intent=capture" data-sdk-integration-source="button-factory"></script>
+<style>
+:root {
+  --r:   #e8192c;
+  --rd:  #b81220;
+  --n:   #0d1a40;
+  --nd:  #060e26;
+  --w:   #ffffff;
+  --g:   #f5f5f5;
+  --m:   #555;
+  --mono:'Space Mono',monospace;
+  --sans:'Space Grotesk',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:#fff;color:var(--n);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 40px;background:var(--n);
+  border-bottom:2px solid var(--r);
+}
+.logo{font-family:var(--mono);font-size:.95rem;font-weight:400;color:var(--w);text-decoration:none;letter-spacing:.05em}
+.logo em{color:var(--r);font-style:normal}
+.nav-cta{
+  font-family:var(--sans);font-size:.85rem;font-weight:700;
+  color:var(--w);background:var(--r);
+  padding:.55rem 1.2rem;border-radius:6px;text-decoration:none;
+  transition:background .2s;letter-spacing:.03em;
+}
+.nav-cta:hover{background:var(--rd)}
+@media(max-width:600px){nav{padding:14px 20px}}
+
+/* ── HERO ── */
+.hero{
+  background:var(--n);
+  padding:80px 40px 72px;
+  text-align:center;
+}
+.hero-label{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--r);display:inline-block;margin-bottom:28px;
+}
+.hero h1{
+  font-size:clamp(2.8rem,6.5vw,5.8rem);font-weight:700;line-height:.92;
+  color:var(--w);margin-bottom:22px;max-width:860px;margin-inline:auto;
+  letter-spacing:-.03em;
+}
+.hero h1 em{color:var(--r);font-style:normal}
+.hero h1 .outline{
+  -webkit-text-stroke:1.5px rgba(255,255,255,.6);
+  color:transparent;display:block;
+}
+.hero p{
+  font-size:clamp(15px,2vw,18px);color:rgba(255,255,255,.65);
+  line-height:1.75;max-width:580px;margin:0 auto 40px;font-weight:300;
+}
+.hero p strong{color:rgba(255,255,255,.9);font-weight:500}
+.hero-btn{
+  display:inline-block;background:var(--r);color:#fff;
+  font-size:1rem;font-weight:700;text-decoration:none;
+  padding:1rem 2.5rem;border-radius:8px;letter-spacing:.03em;
+  transition:background .2s;
+}
+.hero-btn:hover{background:var(--rd)}
+.hero-sub{
+  margin-top:20px;font-family:var(--mono);font-size:.7rem;
+  color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;
+}
+@media(max-width:600px){.hero{padding:56px 20px 52px}}
+
+/* ── SECCIONES GENÉRICAS ── */
+.sec{padding:72px 40px}
+.sec-label{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--r);margin-bottom:16px;display:block;
+}
+.sec h2{
+  font-size:clamp(2rem,4.5vw,4rem);font-weight:700;line-height:.95;
+  letter-spacing:-.03em;margin-bottom:16px;
+}
+.sec h2 em{color:var(--r);font-style:normal}
+.sec h2 .outline{-webkit-text-stroke:1.5px var(--n);color:transparent;}
+.sec-intro{
+  font-size:clamp(15px,1.8vw,17px);color:var(--m);line-height:1.8;
+  max-width:600px;font-weight:300;
+}
+.sec-center{text-align:center}
+.sec-center .sec-intro{margin-inline:auto}
+
+/* ── QUÉ INCLUYE ── */
+.incluye{background:var(--g)}
+.feat-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-top:48px;
+}
+@media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.feat-grid{grid-template-columns:1fr}}
+.feat{
+  background:#fff;border:1px solid #e8e8e8;border-radius:12px;
+  padding:28px 24px;border-top:3px solid var(--r);
+}
+.feat-ico{
+  width:40px;height:40px;background:#fff0f0;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+}
+.feat-ico svg{width:22px;height:22px;stroke:var(--r);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--n)}
+.feat p{font-size:.88rem;color:var(--m);line-height:1.65;font-weight:300}
+.feat-nota{
+  font-family:var(--mono);font-size:.65rem;letter-spacing:.05em;
+  color:var(--r);margin-top:10px;display:block;
+}
+
+/* ── SIN MANTENIMIENTO ── */
+.nomante{
+  background:var(--n);
+  padding:64px 40px;text-align:center;
+}
+.nomante h2{
+  font-size:clamp(22px,3.5vw,34px);font-weight:700;color:var(--w);
+  margin-bottom:16px;line-height:1.2;
+}
+.nomante h2 em{color:var(--r);font-style:normal}
+.nomante p{
+  font-size:clamp(14px,1.8vw,16px);color:rgba(255,255,255,.6);
+  line-height:1.8;max-width:580px;margin:0 auto 32px;font-weight:300;
+}
+.nomante-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;
+  max-width:700px;margin:0 auto;
+}
+.nomante-pill{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;
+  color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.12);
+  padding:.4rem .9rem;border-radius:20px;
+}
+
+/* ── PROCESO ── */
+.proceso-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:48px;
+}
+@media(max-width:700px){.proceso-grid{grid-template-columns:1fr;gap:1.5rem}}
+.paso{text-align:center;padding:0 12px}
+.paso-n{
+  font-family:var(--mono);font-size:2.5rem;font-weight:400;
+  color:var(--r);opacity:.25;line-height:1;margin-bottom:12px;
+}
+.paso h3{font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--n)}
+.paso p{font-size:.88rem;color:var(--m);line-height:1.65;font-weight:300}
+
+/* ── PRECIO ── */
+.precio-sec{
+  background:var(--g);
+  padding:72px 40px;
+}
+.pagg{
+  display:grid;grid-template-columns:1fr 1.5fr;gap:2rem;
+  max-width:900px;margin:48px auto 0;align-items:start;
+}
+@media(max-width:800px){.pagg{grid-template-columns:1fr}}
+.pcaja{
+  background:var(--n);border-radius:14px;padding:32px 28px;color:var(--w);
+  position:sticky;top:80px;
+}
+.pcaja-label{
+  font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:12px;
+}
+.pcaja-pre-tachado{
+  font-size:1rem;color:rgba(255,255,255,.3);text-decoration:line-through;
+  font-family:var(--mono);margin-bottom:4px;
+}
+.pcaja-pre{
+  font-size:2.4rem;font-weight:700;color:var(--w);line-height:1;margin-bottom:4px;
+}
+.pcaja-sub{
+  font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;
+  color:rgba(255,255,255,.35);margin-bottom:20px;
+}
+.pcaja-divider{height:1px;background:rgba(255,255,255,.08);margin:20px 0}
+.pitem{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.83rem;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:10px;font-weight:300;
+}
+.pitem::before{
+  content:'✓';color:var(--r);font-weight:700;font-size:.85rem;flex-shrink:0;margin-top:1px;
+}
+.pnota{
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.04em;
+  color:rgba(255,255,255,.25);margin-top:16px;line-height:1.6;
+}
+/* MPW */
+.mpw{
+  background:#fff;border-radius:14px;padding:32px 28px;
+  border:1px solid #e8e8e8;
+  box-shadow:0 4px 24px rgba(0,0,0,.06);
+}
+.pay-tabs{display:flex;gap:.5rem;margin-bottom:1.2rem}
+.pay-tab{
+  flex:1;padding:.6rem .5rem;border-radius:8px;
+  border:1.5px solid #c8cdd8;background:transparent;
+  color:#7a8090;font-family:var(--sans);font-size:.8rem;font-weight:600;
+  cursor:pointer;transition:all .2s;text-align:center;
+}
+.pay-tab.active{border-color:var(--r);background:#fff0f0;color:var(--r)}
+.pay-tab:hover:not(.active){border-color:#9aa;color:#555}
+.mpt{font-weight:700;font-size:.95rem;color:var(--n);margin-bottom:6px}
+.mps{font-size:.78rem;color:#888;margin-bottom:16px;line-height:1.5;font-weight:300}
+.mpseg{font-size:.72rem;color:#aaa;text-align:center}
+.mpbrand{color:#009ee3;font-weight:700}
+#mpmsg,#ppmsg{font-size:.78rem;text-align:center;margin-top:.4rem;min-height:1.2rem;font-family:var(--sans)}
+
+/* ── FAQ ── */
+.faq-list{max-width:700px;margin:40px auto 0}
+.fi{border-bottom:1px solid #ebebeb;cursor:pointer;user-select:none}
+.fiq{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 4px;font-weight:600;font-size:.95rem;color:var(--n);gap:16px;
+}
+.fiq::after{content:'+';font-size:1.3rem;color:var(--r);flex-shrink:0;transition:transform .2s}
+.fi.open .fiq::after{transform:rotate(45deg)}
+.fia{display:none;padding:0 4px 18px;font-size:.88rem;color:var(--m);line-height:1.75;font-weight:300}
+.fi.open .fia{display:block}
+
+/* ── CTA FINAL ── */
+.cta-final{
+  background:var(--r);padding:72px 40px;text-align:center;
+}
+.cta-final h2{
+  font-size:clamp(24px,4vw,40px);font-weight:700;color:#fff;
+  margin-bottom:16px;line-height:1.15;
+}
+.cta-final p{font-size:clamp(14px,1.8vw,17px);color:rgba(255,255,255,.8);margin-bottom:36px;line-height:1.7;font-weight:300}
+.cta-btn{
+  display:inline-block;background:var(--n);color:#fff;
+  font-size:1rem;font-weight:700;text-decoration:none;
+  padding:1rem 2.5rem;border-radius:8px;transition:background .2s;
+}
+.cta-btn:hover{background:var(--nd)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--nd);padding:28px 40px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.fl{font-family:var(--mono);font-size:.75rem;color:rgba(255,255,255,.25)}
+.fl a{color:rgba(255,255,255,.25);text-decoration:none}
+.fl a:hover{color:rgba(255,255,255,.5)}
+
+/* ── STICKY MOBILE ── */
+.smob{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;
+  background:var(--n);border-top:2px solid var(--r);
+  padding:.8rem 1.4rem;flex-direction:column;gap:.3rem;
+}
+@media(max-width:800px){
+  .smob{display:flex}
+  body{padding-bottom:90px}
+  .sec{padding:52px 20px}
+  .precio-sec{padding:52px 20px}
+  .nomante{padding:48px 20px}
+  .cta-final{padding:52px 20px}
+  footer{padding:24px 20px;flex-direction:column;align-items:flex-start}
+  .pagg{grid-template-columns:1fr!important}
+  .pcaja{position:static!important}
+  #paymentBrick_container{width:100%!important;overflow:hidden!important}
+  #paymentBrick_container iframe{width:100%!important;max-width:100%!important}
+  .mpw{overflow:hidden}
+}
+.smob-row{display:flex;justify-content:space-between;align-items:baseline}
+.smob-prices{display:flex;align-items:baseline;gap:.4rem}
+.smob-pre{font-family:var(--mono);font-size:.7rem;color:rgba(255,255,255,.3);text-decoration:line-through}
+.smob-price{font-family:var(--mono);font-size:1.1rem;font-weight:700;color:#fff}
+.smob-unit{font-family:var(--mono);font-size:.58rem;color:rgba(255,255,255,.3)}
+.smob-btn{
+  display:block;text-align:center;background:var(--r);color:#fff;
+  font-weight:700;font-size:.9rem;padding:.7rem;border-radius:6px;
+  text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://design.cosmart.com.ar" class="logo">DESIGN<em>_by COSMART</em></a>
+  <a href="#pagar" class="nav-cta">Quiero mi página →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-label">Páginas de venta</span>
+  <h1>Tu producto<br><span class="outline">ya tiene demanda.</span><br>Dale la página que <em>se merece.</em></h1>
+  <p>
+    Una landing profesional con <strong>integración de pago, dominio propio
+    y todo configurado para vender.</strong><br>
+    Lista en 72hs hábiles desde que nos enviás la información. Sin código. Sin mantenimiento mensual.
+  </p>
+  <a href="#pagar" class="hero-btn" onclick="setTimeout(initBrick,300)">Quiero mi página →</a>
+  <p class="hero-sub">desde $320.000 ARS · USD 200</p>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section class="sec incluye" id="incluye">
+  <div style="max-width:960px;margin:0 auto">
+    <span class="sec-label">Lo que incluye</span>
+    <h2>Todo lo que necesitás<br><span class="outline">para empezar</span> a vender <em>hoy.</em></h2>
+    <p class="sec-intro">No es solo diseño. Es una herramienta de venta construida de punta a punta.</p>
+    <div class="feat-grid">
+
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>Narrativa que vende</h3>
+        <p>Texto escrito con estrategia para convertir visitantes en compradores. No relleno: cada palabra tiene un propósito.</p>
+      </div>
+
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>Visuales que venden</h3>
+        <p>Imágenes únicas y adaptadas a tu producto. Sin fotos de stock genéricas ni bancos de imágenes de terceros.</p>
+      </div>
+
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+        </div>
+        <h3>Integración de pago</h3>
+        <p>MercadoPago + PayPal configurados. Tu cliente paga, vos cobrás — en pesos o en dólares.</p>
+      </div>
+
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 4.18 2 2 0 015.07 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h3>Botón WhatsApp directo</h3>
+        <p>Un clic y tu cliente te escribe. Sin formularios, sin intermediarios. La consulta llega a tu teléfono.</p>
+      </div>
+
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Email de confirmación</h3>
+        <p>Cada compra dispara un email automático a tu cliente. Profesional desde la primera venta.</p>
+      </div>
+
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        </div>
+        <h3>Dominio y publicación online</h3>
+        <p>Asociamos tu dominio y dejamos tu página accesible en internet. Vos solo nos das el nombre. Funciona igual para productos físicos, digitales o servicios.</p>
+        <span class="feat-nota">nic.ar ~$8.500 ARS/año · internacionales ~$8 USD/año</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SIN MANTENIMIENTO -->
+<section class="nomante">
+  <h2>Pagás una vez.<br><em>La página es tuya para siempre.</em></h2>
+  <p>
+    No hay cuota mensual. No hay plataforma que renovar. No hay dependencia de nadie.
+    El código es tuyo, el hosting es gratuito, el dominio lo pagás directo al registrador — sin intermediarios.
+  </p>
+  <div class="nomante-grid">
+    <span class="nomante-pill">SIN cuota mensual</span>
+    <span class="nomante-pill">SIN plataforma externa</span>
+    <span class="nomante-pill">SIN dependencia de nosotros</span>
+    <span class="nomante-pill">Hosting gratuito</span>
+    <span class="nomante-pill">Código en tus manos</span>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="sec" style="background:#fff">
+  <div style="max-width:860px;margin:0 auto" class="sec-center">
+    <span class="sec-label">El proceso</span>
+    <h2>De pago<br><span class="outline">a página live</span><br>en <em>3 pasos.</em></h2>
+    <div class="proceso-grid">
+      <div class="paso">
+        <div class="paso-n">01</div>
+        <h3>Pagás</h3>
+        <p>Elegís el método de pago — pesos o dólares — y listo. Recibís confirmación por email de inmediato.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-n">02</div>
+        <h3>Nos mandás la info</h3>
+        <p>Nombre del producto, precio, una foto y una descripción básica. En 24hs hábiles Nuestro equipo te contacta para arrancar.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-n">03</div>
+        <h3>Tenés tu página</h3>
+        <p>En 72hs hábiles tu landing está live, con dominio asociado, pagos configurados y lista para recibir ventas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIO + PAGO -->
+<section class="precio-sec" id="pagar">
+  <div style="max-width:960px;margin:0 auto">
+    <div class="sec-center">
+      <span class="sec-label">Invertí en tu negocio</span>
+      <h2>Una página que trabaja<br>mientras vos <em>descansás.</em></h2>
+    </div>
+    <div class="pagg">
+
+      <!-- PRICE CARD -->
+      <div class="pcaja">
+        <div class="pcaja-label">DESIGN — Página de ventas</div>
+
+        <!-- ARS -->
+        <div style="margin-bottom:.25rem">
+          <div class="pcaja-pre">$320.000</div>
+          <div class="pcaja-sub">pesos argentinos · pago único</div>
+        </div>
+        <!-- Separador suave -->
+        <div style="height:1px;background:rgba(255,255,255,.08);margin:.75rem 0"></div>
+        <!-- USD -->
+        <div>
+          <div class="pcaja-pre" style="font-size:1.6rem;color:rgba(255,255,255,.7)">USD 200</div>
+          <div class="pcaja-sub">dólares · pago único</div>
+        </div>
+
+        <div class="pcaja-divider"></div>
+
+        <div class="pitem">Narrativa que vende</div>
+        <div class="pitem">Visuales únicos para tu producto</div>
+        <div class="pitem">MercadoPago + PayPal integrados</div>
+        <div class="pitem">Botón de WhatsApp directo</div>
+        <div class="pitem">Email de confirmación automático</div>
+        <div class="pitem">Dominio asociado + subida a hosting</div>
+        <div class="pitem">Una ronda de revisiones incluida</div>
+        <div class="pitem" style="color:var(--r);font-weight:500">Sin cuota mensual nunca</div>
+
+        <p class="pnota">⚠ Dominio no incluido en el precio.<br>nic.ar ~$8.500 ARS/año · Internacional ~$8 USD/año.</p>
+      </div>
+
+      <!-- FORMULARIO DE PAGO -->
+      <div class="mpw">
+        <div class="pay-tabs">
+          <button class="pay-tab active" id="tab-mp" onclick="switchTab('mp')">Pesos (ARS)</button>
+          <button class="pay-tab" id="tab-pp" onclick="switchTab('pp')">Dólares (USD)</button>
+        </div>
+
+        <!-- MP -->
+        <div id="mp-section">
+          <div class="mpt">Completá tus datos para pagar</div>
+          <div class="mps">Pago seguro por Mercado Pago. Tarjetas de crédito, débito, Rapipago y transferencia.</div>
+          <div id="paymentBrick_container"></div>
+          <div class="mpseg" style="margin-top:.8rem">🔒 Pago seguro · <span class="mpbrand">Mercado Pago</span></div>
+          <div id="mpmsg"></div>
+        </div>
+
+        <!-- PayPal -->
+        <div id="pp-section" style="display:none">
+          <div class="mpt">Pagá con PayPal en dólares</div>
+          <div class="mps">Pago seguro desde cualquier país. Aceptamos todas las tarjetas y saldo PayPal.</div>
+          <div id="paypal_container" style="min-height:150px"></div>
+          <div class="mpseg" style="margin-top:.8rem">🔒 Pago seguro · <span style="color:#003087;font-weight:700;background:#fff;padding:.1rem .4rem;border-radius:4px;font-size:.78rem">Pay<span style="color:#009cde">Pal</span></span></div>
+          <div id="ppmsg"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" style="background:#fff" id="faq">
+  <div style="max-width:760px;margin:0 auto" class="sec-center">
+    <span class="sec-label">Preguntas frecuentes</span>
+    <h2>Lo que todos<br><em>preguntan primero.</em></h2>
+    <div class="faq-list">
+
+      <div class="fi">
+        <div class="fiq">¿En cuánto tiempo está lista mi página?</div>
+        <div class="fia">72 horas hábiles desde que confirmamos el inicio. Primero te contactamos para coordinar los detalles, y desde ahí arrancamos el cronómetro.</div>
+      </div>
+
+      <div class="fi">
+        <div class="fiq">¿Qué necesito darles para arrancar?</div>
+        <div class="fia">Nombre del producto, precio de venta, una foto (o fotos) y una descripción básica de para qué sirve. Con eso alcanza. Si tenés más info, mejor — pero no es obligatorio.</div>
+      </div>
+
+      <div class="fi">
+        <div class="fiq">¿El dominio está incluido?</div>
+        <div class="fia">No. El dominio lo pagás vos directamente al registrador: en nic.ar cuesta ~$8.500 ARS/año para dominios .com.ar. Los internacionales (.com, .store, etc.) salen desde ~$8 USD/año en Namecheap. Nosotros te guiamos y hacemos la asociación técnica sin costo extra.</div>
+      </div>
+
+      <div class="fi">
+        <div class="fiq">¿Puedo pedir cambios después?</div>
+        <div class="fia">Incluye una ronda completa de revisiones. Cambios adicionales fuera de ese alcance se cotizan aparte según lo que necesités.</div>
+      </div>
+
+      <div class="fi">
+        <div class="fiq">¿Qué pasa si ya tengo dominio?</div>
+        <div class="fia">Perfecto, lo asociamos a tu nueva página sin ningún costo adicional. Solo necesitamos acceso al panel de DNS.</div>
+      </div>
+
+      <div class="fi">
+        <div class="fiq">¿Cuánto cuesta mantener la página después?</div>
+        <div class="fia">El hosting es gratuito (GitHub Pages). Solo pagás el dominio una vez por año, directo al registrador. No hay ninguna cuota nuestra ni plataforma externa que renovar.</div>
+      </div>
+
+      <div class="fi">
+        <div class="fiq">¿Puedo vender cualquier producto?</div>
+        <div class="fia">Sí, siempre que sea legal y tengas los permisos correspondientes. Trabajamos con productos físicos, digitales y servicios. Si pensás hacer publicidad para vender, te recomendamos revisar las políticas de Meta Ads y Google Ads antes de arrancar — algunos productos tienen restricciones. Si necesitás ayuda con la parte de publicidad, <a href="https://rumbovoraz.cosmart.com.ar" target="_blank" style="color:var(--r);font-weight:600">Rumbo Voraz</a> se especializa exactamente en eso.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2>El producto ya lo tenés.<br>La página puede estar lista en 72hs hábiles.</h2>
+  <p>Pagás una vez. Tu página trabaja todos los días.</p>
+  <a href="#pagar" class="cta-btn">Quiero mi página →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="fl">
+    <a href="https://design.cosmart.com.ar" class="logo" style="font-size:.8rem">DESIGN<em style="color:#e8192c;font-style:normal">_by COSMART</em></a>
+  </span>
+  <span class="fl">© 2026 · <a href="https://cosmart.com.ar">cosmart.com.ar</a> · <a href="mailto:info@cosmart.com.ar">info@cosmart.com.ar</a></span>
+</footer>
+
+<!-- STICKY MOBILE -->
+<div class="smob">
+  <div class="smob-row">
+    <div>
+      <div class="smob-prices">
+        <span class="smob-pre" id="smob-tachado-ars" style="display:none">$360.000</span>
+        <span class="smob-price" id="smob-price-ars">$320.000</span>
+      </div>
+      <div class="smob-unit">pesos argentinos</div>
+    </div>
+    <span style="color:rgba(255,255,255,.15);font-size:.9rem;align-self:center">·</span>
+    <div>
+      <div class="smob-prices">
+        <span class="smob-pre" id="smob-tachado-usd" style="display:none">USD 225</span>
+        <span class="smob-price" id="smob-price-usd" style="color:rgba(255,255,255,.75)">USD 200</span>
+      </div>
+      <div class="smob-unit">dólares</div>
+    </div>
+  </div>
+  <a href="#pagar" class="smob-btn">Quiero mi página →</a>
+</div>
+
+<script>
+// ── FAQ ──
+document.querySelectorAll('.fi').forEach(el => {
+  el.addEventListener('click', () => {
+    const open = el.classList.contains('open');
+    document.querySelectorAll('.fi').forEach(x => x.classList.remove('open'));
+    if (!open) el.classList.add('open');
+  });
+});
+
+// ── CONSTANTES ──
+const WORKER_URL   = 'https://mp-productos-ganadores.conglomeradocosmart.workers.dev';
+const TRAINING_URL = 'https://cosmart-training.conglomeradocosmart.workers.dev';
+const PRECIO_ARS   = 320000;
+const PRECIO_USD   = 200.00;
+
+// ── TABS ──
+let ppInitialized = false;
+function switchTab(tab) {
+  const tabMp = document.getElementById('tab-mp');
+  const tabPp = document.getElementById('tab-pp');
+  const mpSec = document.getElementById('mp-section');
+  const ppSec = document.getElementById('pp-section');
+  const arsP  = document.getElementById('ars-price');
+  const usdP  = document.getElementById('usd-price');
+
+  if (tab === 'pp') {
+    tabMp.classList.remove('active'); tabPp.classList.add('active');
+    mpSec.style.display = 'none'; ppSec.style.display = 'block';
+    arsP.style.display = 'none'; usdP.style.display = 'block';
+    initPayPal();
+  } else {
+    tabMp.classList.add('active'); tabPp.classList.remove('active');
+    mpSec.style.display = 'block'; ppSec.style.display = 'none';
+    arsP.style.display = 'block'; usdP.style.display = 'none';
+  }
+}
+
+// ── MERCADO PAGO ──
+let brickInitialized = false;
+async function initBrick() {
+  if (brickInitialized) return;
+  brickInitialized = true;
+  const msg = document.getElementById('mpmsg');
+  try {
+    const ctrl = new AbortController();
+    const tmo = setTimeout(() => ctrl.abort(), 5000);
+    const r = await fetch(WORKER_URL + '/preference', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ amount: PRECIO_ARS }),
+      signal: ctrl.signal
+    });
+    clearTimeout(tmo);
+    const json = await r.json();
+    if (!json.preference_id) throw new Error('No preference_id');
+
+    const mp = new MercadoPago('APP_USR-057d290b-5af9-4b00-8a08-6753dc47aec4', { locale: 'es-AR' });
+    await mp.bricks().create('payment', 'paymentBrick_container', {
+      initialization: { amount: PRECIO_ARS, preferenceId: json.preference_id },
+      customization: {
+        visual: { hideFormTitle: true, style: { theme: 'default' } },
+        paymentMethods: { creditCard: 'all', debitCard: 'all' }
+      },
+      callbacks: {
+        onReady: () => {},
+        onSubmit: ({ formData }) => new Promise(async (resolve, reject) => {
+          try {
+            const pr = await fetch(WORKER_URL + '/pay', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData)
+            });
+            const data = await pr.json();
+            if (data.status === 'approved') {
+              const email = formData?.payer?.email || '';
+              _pagoVia = 'mercadopago'; _pagoMonto = '$320.000 ARS';
+              mostrarExito(email);
+            } else if (data.status === 'in_process' || data.status === 'pending') {
+              msg.style.color = '#e6a817';
+              msg.textContent = '⏳ Pago en proceso. Te avisamos por email cuando se confirme.';
+            } else {
+              msg.style.color = '#e8192c';
+              msg.textContent = '⚠️ No se pudo procesar. Revisá los datos e intentá de nuevo.';
+            }
+            resolve();
+          } catch(e) {
+            msg.style.color = '#e8192c';
+            msg.textContent = 'Error de conexión. Intentá de nuevo.';
+            reject();
+          }
+        }),
+        onError: e => console.error(e)
+      }
+    });
+  } catch(e) {
+    brickInitialized = false;
+    document.getElementById('paymentBrick_container').innerHTML = `
+      <div style="text-align:center;padding:20px;font-family:var(--sans)">
+        <p style="color:#555;font-size:14px;margin-bottom:12px">El formulario no pudo cargar.<br>Podés escribirnos directamente:</p>
+        <a href="mailto:info@cosmart.com.ar?subject=Quiero mi página de ventas" style="display:inline-block;background:#0d1a40;color:#fff;padding:10px 24px;border-radius:6px;font-weight:700;text-decoration:none;font-size:14px">Escribir a Vaneh →</a>
+      </div>`;
+  }
+}
+
+// ── PAYPAL ──
+function initPayPal() {
+  if (ppInitialized) return;
+  if (typeof paypal === 'undefined') {
+    document.getElementById('ppmsg').textContent = 'No se pudo cargar PayPal. Revisá tu conexión.';
+    return;
+  }
+  ppInitialized = true;
+  paypal.Buttons({
+    style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'pay', height: 48 },
+    createOrder: (data, actions) => actions.order.create({
+      purchase_units: [{
+        description: 'DESIGN — Página de ventas',
+        amount: { value: PRECIO_USD.toFixed(2), currency_code: 'USD' }
+      }]
+    }),
+    onApprove: (data, actions) => {
+      document.getElementById('ppmsg').textContent = '⏳ Procesando...';
+      return actions.order.capture().then(async details => {
+        const email = details.payer?.email_address || '';
+        const nombre = details.payer?.name?.given_name || '';
+        _pagoVia = 'paypal'; _pagoMonto = 'USD 200';
+        mostrarExito(email);
+      });
+    },
+    onError: () => {
+      document.getElementById('ppmsg').style.color = '#e8192c';
+      document.getElementById('ppmsg').textContent = '⚠️ Error al procesar. Intentá de nuevo.';
+      ppInitialized = false;
+    },
+    onCancel: () => {}
+  }).render('#paypal_container');
+}
+
+function varShow(v) {
+  ['talle','color','ambas'].forEach(k => {
+    const el = document.getElementById('var-'+k);
+    if (el) el.style.display = k===v ? (k==='ambas'?'flex':'block') : 'none';
+  });
+}
+function mpToggle(val) {
+  document.getElementById('mp-tuto').style.display   = (val !== 'si') ? 'block' : 'none';
+  document.getElementById('mp-campos').style.display = 'flex';
+}
+function ppToggle(show) {
+  document.getElementById('paypal-wrap').style.display = show ? 'flex' : 'none';
+}
+
+// variables globales para el formulario post-pago
+let _pagoVia = '', _pagoMonto = '';
+let _archivos = []; // archivos de branding seleccionados
+
+// ── ARCHIVOS BRANDING ──
+const MAX_FILE  = 10 * 1024 * 1024;  // 10MB por archivo
+const MAX_TOTAL = 20 * 1024 * 1024;  // 20MB total
+
+function handleFiles(fileList) {
+  const errEl = document.getElementById('file-error');
+  errEl.style.display = 'none';
+  const nuevos = Array.from(fileList);
+  for (const f of nuevos) {
+    if (f.size > MAX_FILE) {
+      errEl.textContent = f.name + ' supera los 10MB. Comprimilo antes de subir.';
+      errEl.style.display = 'block';
+      continue;
+    }
+    if (_archivos.find(a => a.name === f.name)) continue;
+    _archivos.push(f);
+  }
+  const total = _archivos.reduce((s, f) => s + f.size, 0);
+  if (total > MAX_TOTAL) {
+    errEl.textContent = 'El total supera los 20MB. Eliminá algún archivo.';
+    errEl.style.display = 'block';
+    _archivos = _archivos.slice(0, -1);
+  }
+  renderFileList();
+}
+
+function renderFileList() {
+  const el = document.getElementById('file-list');
+  el.innerHTML = _archivos.map((f, i) => `
+    <div style="display:flex;align-items:center;justify-content:space-between;background:#f8f8f8;border-radius:7px;padding:8px 12px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:.95rem">${fileIco(f.name)}</span>
+        <span style="font-family:var(--sans);font-size:.82rem;color:#333">${f.name}</span>
+        <span style="font-family:var(--mono);font-size:.68rem;color:#aaa">${(f.size/1024/1024).toFixed(1)}MB</span>
+      </div>
+      <button type="button" onclick="removeFile(${i})" style="background:none;border:none;cursor:pointer;color:#bbb;font-size:1rem;padding:0 4px" title="Eliminar">×</button>
+    </div>`).join('');
+}
+
+function removeFile(i) { _archivos.splice(i, 1); renderFileList(); }
+
+function fileIco(name) {
+  const ext = name.split('.').pop().toLowerCase();
+  return ext === 'pdf' ? '📄' : '🖼️';
+}
+
+function dzOver(e) {
+  e.preventDefault();
+  document.getElementById('drop-zone').style.borderColor = '#e8192c';
+}
+function dzOut(e) {
+  document.getElementById('drop-zone').style.borderColor = '#ddd';
+}
+function dzDrop(e) {
+  e.preventDefault();
+  dzOut(e);
+  handleFiles(e.dataTransfer.files);
+  document.getElementById('branding-files').click; // no-op, solo limpia el estado
+}
+
+async function filesToBase64() {
+  return Promise.all(_archivos.map(f => new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res({ name: f.name, content: r.result.split(',')[1], type: f.type });
+    r.onerror = rej;
+    r.readAsDataURL(f);
+  })));
+}
+
+// ── NOTIFICACIÓN POST-PAGO ──
+async function notificarCompra(email, nombre, via, monto, datos) {
+  await fetch(TRAINING_URL + '/design/compra', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, nombre, via, monto, datos })
+  });
+}
+
+// ── ÉXITO ──
+function mostrarExito(email) {
+  const pagar = document.getElementById('pagar');
+  if (pagar) pagar.scrollIntoView({ behavior: 'smooth' });
+  document.querySelector('.pagg').innerHTML = `
+    <div style="grid-column:1/-1;background:#fff;border-radius:14px;border:2px solid #e8192c;overflow:hidden">
+
+      <!-- HEADER ÉXITO -->
+      <div style="background:#0d1a40;padding:28px 32px;display:flex;align-items:center;gap:16px">
+        <div style="width:44px;height:44px;background:#e8192c;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <div style="font-family:var(--sans);font-size:1.2rem;font-weight:700;color:#fff">¡Pago confirmado!</div>
+          <div style="font-family:var(--mono);font-size:.68rem;color:rgba(255,255,255,.45);letter-spacing:.1em;margin-top:2px">
+            ${email ? email : ''} · DESIGN_by COSMART
+          </div>
+        </div>
+      </div>
+
+      <!-- INTRO FORMULARIO -->
+      <div style="padding:28px 32px 8px;border-bottom:1px solid #f0f0f0">
+        <p style="font-family:var(--sans);font-size:.95rem;color:#444;line-height:1.7;margin:0">
+          Completá este formulario para que podamos arrancar. Las <strong style="color:#0d1a40">72hs hábiles corren desde que enviás esta información</strong> — así que cuanto antes, mejor.
+        </p>
+      </div>
+
+      <!-- FORMULARIO -->
+      <form id="onboarding-form" style="padding:28px 32px;display:flex;flex-direction:column;gap:20px">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">Nombre y apellido *</label>
+            <input name="nombre" required placeholder="Tu nombre" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+          </div>
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">Nombre del negocio / marca *</label>
+            <input name="marca" required placeholder="Ej: La Tienda de Sol" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:4px">WhatsApp comercial *</label>
+            <span style="font-family:var(--sans);font-size:.78rem;color:#aaa;display:block;margin-bottom:6px">El que usan tus clientes para contactarte</span>
+            <input name="whatsapp" required placeholder="+54 9 11 ..." style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+          </div>
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:4px">Email comercial *</label>
+            <span style="font-family:var(--sans);font-size:.78rem;color:#aaa;display:block;margin-bottom:6px">El que aparecerá en tu página para consultas</span>
+            <input name="emailContacto" type="email" required value="${email}" placeholder="contacto@tunegocio.com" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+          </div>
+        </div>
+
+        <div>
+          <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">¿Qué producto vas a vender? *</label>
+          <textarea name="producto" required rows="2" placeholder="Describí brevemente tu producto o servicio (físico o digital)" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;resize:vertical;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'"></textarea>
+        </div>
+
+        <!-- DOMINIO -->
+        <div style="border:1.5px solid #eee;border-radius:10px;padding:18px 20px">
+          <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:8px">¿Ya tenés dominio? *</label>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--sans);font-size:.9rem;color:#333">
+              <input type="radio" name="dominio" value="si" onchange="document.getElementById('dominio-cual').style.display='block';document.getElementById('dominio-tuto').style.display='block'"> Sí, ya tengo
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--sans);font-size:.9rem;color:#333">
+              <input type="radio" name="dominio" value="no" onchange="document.getElementById('dominio-cual').style.display='none';document.getElementById('dominio-tuto').style.display='block'"> No, necesito comprarlo
+            </label>
+          </div>
+          <div id="dominio-cual" style="display:none;margin-bottom:10px">
+            <input name="dominioNombre" placeholder="Ej: matiasstore.com o matiasstore.com.ar" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+          </div>
+          <div id="dominio-tuto" style="display:none">
+            <p style="font-family:var(--sans);font-size:.82rem;color:#555;margin-bottom:10px;line-height:1.6"><strong style="color:#0d1a40">Importante:</strong> una vez que tengás el dominio, vas a necesitar delegarlo a nuestros servidores (Cloudflare) para que podamos configurarlo. Te explicamos cómo en cada paso 👇</p>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <a href="https://www.youtube.com/results?search_query=como+comprar+dominio+nic+ar+argentina+tutorial+2024" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#fff0f0;border:1px solid #ffd0d0;border-radius:8px;padding:10px 14px;text-decoration:none">
+                <span style="font-size:1.2rem">🇦🇷</span>
+                <div>
+                  <div style="font-family:var(--sans);font-size:.85rem;font-weight:700;color:#0d1a40">Cómo comprar un .com.ar en nic.ar</div>
+                  <div style="font-family:var(--sans);font-size:.75rem;color:#888">Tutorial en YouTube → buscar "dominio nic.ar"</div>
+                </div>
+              </a>
+              <a href="https://www.youtube.com/results?search_query=como+comprar+dominio+namecheap+en+espanol+tutorial" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#f0f4ff;border:1px solid #c7d4ff;border-radius:8px;padding:10px 14px;text-decoration:none">
+                <span style="font-size:1.2rem">🌐</span>
+                <div>
+                  <div style="font-family:var(--sans);font-size:.85rem;font-weight:700;color:#0d1a40">Cómo comprar un .com internacional en Namecheap</div>
+                  <div style="font-family:var(--sans);font-size:.75rem;color:#888">Tutorial en YouTube → buscar "dominio Namecheap español"</div>
+                </div>
+              </a>
+              <a href="https://www.youtube.com/results?search_query=como+delegar+dominio+cloudflare+nameservers+tutorial+espanol" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:10px 14px;text-decoration:none">
+                <span style="font-size:1.2rem">☁️</span>
+                <div>
+                  <div style="font-family:var(--sans);font-size:.85rem;font-weight:700;color:#0d1a40">Cómo delegar el dominio a Cloudflare (nameservers)</div>
+                  <div style="font-family:var(--sans);font-size:.75rem;color:#888">Tutorial en YouTube → una vez que lo tengas, nosotros te damos los NS</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MERCADO PAGO -->
+        <div style="border:1.5px solid #eee;border-radius:10px;padding:18px 20px">
+          <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:4px">MercadoPago — credenciales de pago *</label>
+          <p style="font-family:var(--sans);font-size:.78rem;color:#aaa;margin-bottom:12px;line-height:1.5">Para integrar los pagos a tu cuenta necesitamos la <strong style="color:#555">Public Key</strong> y el <strong style="color:#555">Access Token</strong> de tu cuenta MercadoPago Developers (sección "Credenciales de producción").</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--sans);font-size:.9rem;color:#333">
+              <input type="radio" name="mp" value="si" onchange="mpToggle('si')"> Sí, ya las tengo
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--sans);font-size:.9rem;color:#333">
+              <input type="radio" name="mp" value="guia" onchange="mpToggle('guia')"> Necesito ayuda para obtenerlas
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--sans);font-size:.9rem;color:#333">
+              <input type="radio" name="mp" value="no" onchange="mpToggle('no')"> No sé qué es eso
+            </label>
+          </div>
+
+          <!-- tutorial (visible para guia/no) -->
+          <div id="mp-tuto" style="display:none;margin-bottom:12px">
+            <a href="https://www.youtube.com/results?search_query=mercadopago+developers+credenciales+public+key+access+token+produccion+tutorial" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#f0fff8;border:1px solid #a7f3d0;border-radius:8px;padding:10px 14px;text-decoration:none">
+              <span style="font-size:1.2rem">💳</span>
+              <div>
+                <div style="font-family:var(--sans);font-size:.85rem;font-weight:700;color:#0d1a40">Cómo obtener tus credenciales de producción en MercadoPago</div>
+                <div style="font-family:var(--sans);font-size:.75rem;color:#888">Tutorial en YouTube · Si no podés, mandálas después — te guiamos nosotros</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- campos credenciales MP (siempre visibles una vez que eligió) -->
+          <div id="mp-campos" style="display:none;display:flex;flex-direction:column;gap:10px">
+            <div>
+              <label style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:5px">Public Key <span style="color:#bbb;font-style:italic">(empieza con APP_USR-...)</span></label>
+              <input name="mpPublicKey" placeholder="APP_USR-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--mono);font-size:.8rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+            </div>
+            <div>
+              <label style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:5px">Access Token <span style="color:#bbb;font-style:italic">(empieza con APP_USR-...)</span></label>
+              <input name="mpAccessToken" placeholder="APP_USR-0000000000000000-000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-000000000" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--mono);font-size:.8rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+            </div>
+            <p style="font-family:var(--sans);font-size:.74rem;color:#bbb;margin:0;line-height:1.5">🔒 Estos datos se envían de forma segura y solo los usa nuestro equipo para configurar los pagos en tu página.</p>
+          </div>
+        </div>
+
+        <!-- PAYPAL -->
+        <div style="border:1.5px solid #eee;border-radius:10px;padding:18px 20px">
+          <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:4px">PayPal — cobrar en dólares (opcional)</label>
+          <p style="font-family:var(--sans);font-size:.78rem;color:#aaa;margin-bottom:12px;line-height:1.5">Si querés aceptar pagos en dólares necesitamos el <strong style="color:#555">Client ID</strong> de tu cuenta PayPal Business (desde PayPal Developer Dashboard).</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--sans);font-size:.9rem;color:#333">
+              <input type="radio" name="paypal" value="si" onchange="ppToggle(true)"> Sí, quiero cobrar en dólares
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--sans);font-size:.9rem;color:#333">
+              <input type="radio" name="paypal" value="no" onchange="ppToggle(false)"> No, solo MercadoPago
+            </label>
+          </div>
+          <div id="paypal-wrap" style="display:none;flex-direction:column;gap:10px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div>
+                <label style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:5px">Email de cuenta PayPal Business</label>
+                <input name="paypalEmail" type="email" placeholder="tu@paypal.com" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+              </div>
+              <div>
+                <label style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:5px">Client ID <span style="color:#bbb;font-style:italic">(de PayPal Developer)</span></label>
+                <input name="paypalClientId" placeholder="AYuQX3JJ..." style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--mono);font-size:.8rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+              </div>
+            </div>
+            <a href="https://www.youtube.com/results?search_query=paypal+developer+dashboard+client+id+business+account+tutorial+espanol" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#f0f4ff;border:1px solid #c7d4ff;border-radius:8px;padding:10px 14px;text-decoration:none">
+              <span style="font-size:1.2rem">🅿️</span>
+              <div>
+                <div style="font-family:var(--sans);font-size:.85rem;font-weight:700;color:#0d1a40">Cómo obtener tu Client ID en PayPal Developer</div>
+                <div style="font-family:var(--sans);font-size:.75rem;color:#888">Tutorial en YouTube · También te acompañamos si no encontrás el dato</div>
+              </div>
+            </a>
+            <p style="font-family:var(--sans);font-size:.74rem;color:#bbb;margin:0;line-height:1.5">🔒 Solo usamos el Client ID para configurar el botón de PayPal en tu página.</p>
+          </div>
+        </div>
+
+        <!-- BRANDING -->
+        <div style="border:1.5px solid #eee;border-radius:10px;padding:18px 20px">
+          <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:8px">¿Tenés logo y colores definidos?</label>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--sans);font-size:.9rem;color:#333">
+              <input type="radio" name="branding" value="si" onchange="document.getElementById('branding-upload').style.display='block'"> Sí, los subo acá
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--sans);font-size:.9rem;color:#333">
+              <input type="radio" name="branding" value="prefiero" onchange="document.getElementById('branding-upload').style.display='none'"> Prefiero que lo elijan ustedes
+            </label>
+          </div>
+          <div id="branding-upload" style="display:none">
+            <p style="font-family:var(--sans);font-size:.78rem;color:#aaa;margin-bottom:10px;line-height:1.5">Subí logo, guía de colores, tipografías, o lo que tengas. PDF, PNG, JPG o WEBP. Máx. 10MB por archivo · 20MB en total.</p>
+            <label id="drop-zone" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed #ddd;border-radius:10px;padding:28px 20px;cursor:pointer;transition:border-color .2s;background:#fafafa" ondragover="dzOver(event)" ondragleave="dzOut(event)" ondrop="dzDrop(event)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span style="font-family:var(--sans);font-size:.85rem;color:#888">Arrastrá archivos acá o <span style="color:#e8192c;font-weight:600">hacé clic para seleccionar</span></span>
+              <input id="branding-files" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.webp" style="display:none" onchange="handleFiles(this.files)">
+            </label>
+            <div id="file-list" style="display:flex;flex-direction:column;gap:6px;margin-top:10px"></div>
+            <div id="file-error" style="display:none;font-family:var(--sans);font-size:.8rem;color:#e8192c;margin-top:6px"></div>
+          </div>
+        </div>
+
+        <div>
+          <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">Referencia visual (opcional)</label>
+          <input name="referencia" placeholder="Link a una página que te guste o estilo que te inspire" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+        </div>
+
+        <!-- PRODUCTO -->
+        <div style="border:1.5px solid #e8eaf0;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:14px">
+          <p style="font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#aaa;margin-bottom:2px">Información del producto</p>
+          <p style="font-size:.78rem;color:#e8192c;font-weight:600;background:rgba(232,25,44,.06);border:1px solid rgba(232,25,44,.15);border-radius:6px;padding:.5rem .8rem;line-height:1.5">⚠️ Esta es una página para <strong>1 solo producto</strong>. Si vendés más de uno, lo cotizamos aparte.</p>
+
+          <!-- precio + precio tachado -->
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">Precio de venta del producto *</label>
+            <input name="precioVenta" placeholder="Ej: $15.000 ARS / USD 12" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+          </div>
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">¿Tenés precio tachado / precio anterior?</label>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px">
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="precioTachado" value="si" style="accent-color:#e8192c;width:15px;height:15px" onchange="document.getElementById('precio-tachado-campo').style.display='block'"> Sí</label>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="precioTachado" value="no" style="accent-color:#e8192c;width:15px;height:15px" onchange="document.getElementById('precio-tachado-campo').style.display='none'"> No</label>
+            </div>
+            <div id="precio-tachado-campo" style="display:none">
+              <input name="precioAnterior" placeholder="Ej: antes $20.000 — ahora $15.000 (o % de descuento)" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+            </div>
+          </div>
+
+          <!-- countdown -->
+          <div style="background:#f0f4ff;border:1.5px solid #c5d0f7;border-radius:8px;padding:14px 16px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+              <span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#5b6abf">⏱ Countdown de oferta</span>
+              <span style="font-size:.65rem;font-weight:700;color:#fff;background:#e8192c;border-radius:3px;padding:2px 6px;letter-spacing:.05em">Recomendado</span>
+            </div>
+            <p style="font-family:var(--sans);font-size:.78rem;color:#555;margin-bottom:10px;line-height:1.55">Un contador de 20 minutos que se resetea si el visitante vuelve a entrar, combinado con una oferta o descuento. Aumenta la urgencia y la tasa de conversión.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px">
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="countdown" value="si" style="accent-color:#e8192c;width:15px;height:15px" onchange="document.getElementById('countdown-campos').style.display='block'"> Sí, quiero el countdown</label>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="countdown" value="no" style="accent-color:#e8192c;width:15px;height:15px" onchange="document.getElementById('countdown-campos').style.display='none'"> No por ahora</label>
+            </div>
+            <div id="countdown-campos" style="display:none;display:flex;flex-direction:column;gap:8px">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                <div>
+                  <label style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#888;display:block;margin-bottom:5px">% de descuento</label>
+                  <input name="countdownDescuento" type="number" min="1" max="99" placeholder="Ej: 15" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.6rem .8rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+                </div>
+                <div>
+                  <label style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#888;display:block;margin-bottom:5px">Precio con descuento</label>
+                  <input name="countdownPrecioFinal" placeholder="Ej: $12.750 ARS" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.6rem .8rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+                </div>
+              </div>
+              <input name="countdownMensaje" placeholder="Texto de la oferta: Ej: ¡Oferta de lanzamiento! Solo por hoy." style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.6rem .8rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+            </div>
+          </div>
+
+          <!-- variantes -->
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">¿Tiene variantes? *</label>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px">
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="variantes" value="no" style="accent-color:#e8192c;width:15px;height:15px" onchange="varShow('')"> No tiene variantes</label>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="variantes" value="talle" style="accent-color:#e8192c;width:15px;height:15px" onchange="varShow('talle')"> Sí, por talle</label>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="variantes" value="color" style="accent-color:#e8192c;width:15px;height:15px" onchange="varShow('color')"> Sí, por color</label>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="variantes" value="talleYcolor" style="accent-color:#e8192c;width:15px;height:15px" onchange="varShow('ambas')"> Talle y color</label>
+            </div>
+            <div id="var-talle" style="display:none;margin-top:4px"><input name="tallesDetalle" placeholder="Listá los talles: Ej: XS, S, M, L, XL, XXL" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'"></div>
+            <div id="var-color" style="display:none;margin-top:4px"><input name="coloresDetalle" placeholder="Listá los colores: Ej: Negro, Blanco, Rojo, Azul marino" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'"></div>
+            <div id="var-ambas" style="display:none;margin-top:4px;display:none;flex-direction:column;gap:8px">
+              <input name="tallesDetalle2" placeholder="Talles: Ej: S, M, L, XL" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+              <input name="coloresDetalle2" placeholder="Colores: Ej: Negro, Blanco, Beige" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+            </div>
+          </div>
+
+          <!-- despacho + entrega -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div>
+              <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">Tiempo de despacho *</label>
+              <input name="despacho" placeholder="Ej: 24-48 hs hábiles" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+            </div>
+            <div>
+              <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">Tiempo de entrega estimado *</label>
+              <input name="entrega" placeholder="Ej: 3 a 7 días según la zona" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+            </div>
+          </div>
+
+          <!-- zonas -->
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">Zonas de envío *</label>
+            <input name="zonas" placeholder="Ej: Todo el país / AMBA / Solo CABA y GBA" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+          </div>
+
+          <!-- envío gratis -->
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">¿Ofrecés envío gratis?</label>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px">
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="envioGratis" value="siempre" style="accent-color:#e8192c;width:15px;height:15px"> Siempre</label>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="envioGratis" value="condicional" style="accent-color:#e8192c;width:15px;height:15px" onchange="document.getElementById('envio-condicion').style.display='block'"> Con condición (monto mínimo, zona, etc.)</label>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;color:#333;cursor:pointer"><input type="radio" name="envioGratis" value="no" style="accent-color:#e8192c;width:15px;height:15px" onchange="document.getElementById('envio-condicion').style.display='none'"> No, el cliente paga el envío</label>
+            </div>
+            <div id="envio-condicion" style="display:none">
+              <input name="envioCondicion" placeholder="Ej: gratis en compras mayores a $20.000 / gratis en AMBA" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+            </div>
+          </div>
+
+          <!-- garantía -->
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">Garantía / política de devolución</label>
+            <textarea name="garantia" rows="2" placeholder="Ej: 30 días de garantía. Si llegó dañado lo reponemos. No hacemos cambio de talle." style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;resize:vertical;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'"></textarea>
+          </div>
+
+          <!-- medios de pago -->
+          <div>
+            <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:8px">Medios de pago MP a aceptar *</label>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.85rem;color:#333;cursor:pointer"><input type="checkbox" name="mp_medios" value="credito" style="accent-color:#e8192c;width:15px;height:15px"> Tarjeta de crédito</label>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.85rem;color:#333;cursor:pointer"><input type="checkbox" name="mp_medios" value="debito" style="accent-color:#e8192c;width:15px;height:15px"> Tarjeta de débito</label>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.85rem;color:#333;cursor:pointer"><input id="chk-transf" type="checkbox" name="mp_medios" value="transferencia" style="accent-color:#e8192c;width:15px;height:15px" onchange="document.getElementById('transf-campos').style.display=this.checked?'flex':'none'"> Transferencia bancaria</label>
+              <div id="transf-campos" style="display:none;flex-direction:column;gap:8px;padding:12px 14px;background:#fafcff;border:1px solid #e0e6f7;border-radius:8px;margin-left:22px">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                  <input name="transfAlias" placeholder="Alias: ej. TIENDA.SOL.MP" style="border:1.5px solid #ddd;border-radius:8px;padding:.6rem .8rem;font-family:var(--sans);font-size:.85rem;color:#0d1a40;outline:none" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+                  <input name="transfCBU" placeholder="CBU: 000000310001234..." style="border:1.5px solid #ddd;border-radius:8px;padding:.6rem .8rem;font-family:var(--mono);font-size:.8rem;color:#0d1a40;outline:none" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+                </div>
+                <input name="transfComprobante" placeholder="Email o WA para recibir el comprobante: ej. pagos@tucuenta.com" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.6rem .8rem;font-family:var(--sans);font-size:.85rem;color:#0d1a40;outline:none" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'">
+                <div style="display:flex;gap:14px">
+                  <label style="display:flex;align-items:center;gap:6px;font-family:var(--sans);font-size:.82rem;color:#555;cursor:pointer"><input type="radio" name="comprobante" value="email" style="accent-color:#e8192c;width:13px;height:13px"> El cliente envía comprobante por email</label>
+                  <label style="display:flex;align-items:center;gap:6px;font-family:var(--sans);font-size:.82rem;color:#555;cursor:pointer"><input type="radio" name="comprobante" value="whatsapp" style="accent-color:#e8192c;width:13px;height:13px"> Por WhatsApp</label>
+                </div>
+              </div>
+              <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.85rem;color:#333;cursor:pointer"><input type="checkbox" name="mp_medios" value="efectivo" style="accent-color:#e8192c;width:15px;height:15px"> Efectivo (Pago Fácil / Rapipago)</label>
+            </div>
+          </div>
+
+          <!-- panel de control + actualizaciones -->
+          <div style="background:#f8f9fc;border:1.5px solid #e0e2ea;border-radius:8px;padding:14px 16px">
+            <p style="font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:8px">Panel de control y actualizaciones</p>
+            <p style="font-family:var(--sans);font-size:.82rem;color:#555;line-height:1.65;margin-bottom:10px">Tu página incluye un <strong style="color:#0d1a40">panel de control</strong> donde vas a poder cambiar las fotos, el precio y la descripción del producto sin tocar código.<br><br>Si necesitás actualizaciones más avanzadas (nuevo diseño, cambio de sección, fechas especiales, etc.), se cotizan aparte a <strong style="color:#0d1a40">$50.000 por actualización</strong>.</p>
+            <label style="display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.85rem;color:#333;cursor:pointer"><input type="checkbox" name="quiereActualizaciones" value="si" style="accent-color:#e8192c;width:15px;height:15px"> Me interesa contratar actualizaciones periódicas (te contactamos para cotizar)</label>
+          </div>
+        </div>
+
+        <div>
+          <label style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px">¿Algo más que quieras contarnos?</label>
+          <textarea name="extra" rows="2" placeholder="Cualquier detalle importante sobre tu producto, tu cliente ideal, lo que sea" style="width:100%;border:1.5px solid #ddd;border-radius:8px;padding:.65rem .85rem;font-family:var(--sans);font-size:.9rem;color:#0d1a40;outline:none;resize:vertical;transition:border-color .2s" onfocus="this.style.borderColor='#e8192c'" onblur="this.style.borderColor='#ddd'"></textarea>
+        </div>
+
+        <div id="form-msg" style="display:none;font-family:var(--sans);font-size:.9rem;padding:.65rem 1rem;border-radius:8px"></div>
+
+        <button type="submit" style="background:#e8192c;color:#fff;border:none;padding:1rem 2rem;font-family:var(--sans);font-weight:700;font-size:1rem;border-radius:8px;cursor:pointer;letter-spacing:.02em;transition:background .2s" onmouseover="this.style.background='#b81220'" onmouseout="this.style.background='#e8192c'">
+          Enviar información →
+        </button>
+
+      </form>
+    </div>`;
+
+  // Submit del formulario de onboarding
+  document.getElementById('onboarding-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    const msg = document.getElementById('form-msg');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const fd = new FormData(this);
+    const datos = Object.fromEntries(fd.entries());
+    datos.emailPago = email;
+
+    // Convertir archivos de branding a base64
+    if (_archivos.length > 0) {
+      btn.textContent = 'Preparando archivos...';
+      datos.adjuntos = await filesToBase64();
+    }
+
+    try {
+      await notificarCompra(email, datos.nombre, _pagoVia, _pagoMonto, datos);
+      msg.style.display = 'block';
+      msg.style.background = '#f0fff4';
+      msg.style.color = '#166534';
+      msg.style.border = '1.5px solid #bbf7d0';
+      msg.innerHTML = '✅ <strong>¡Todo listo!</strong> Recibimos tu información' + (_archivos.length ? ' y tus archivos de branding' : '') + '.<br>En breve te enviamos los pasos siguientes, incluyendo los <strong style="color:#0d1a40">nameservers para delegar tu dominio</strong>. Las 72hs hábiles arrancan una vez que eso esté listo.';
+      btn.style.display = 'none';
+    } catch(err) {
+      msg.style.display = 'block';
+      msg.style.background = '#fff0f0';
+      msg.style.color = '#991b1b';
+      msg.style.border = '1.5px solid #fecaca';
+      msg.innerHTML = 'Hubo un error al enviar. Escribinos directamente a <strong>vaneh@cosmart.com.ar</strong>';
+      btn.disabled = false;
+      btn.textContent = 'Reintentar →';
+    }
+  });
+}
+
+// ── INIT BRICK cuando entra en pantalla ──
+const brickObserver = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) { initBrick(); brickObserver.disconnect(); }
+}, { threshold: 0.1 });
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('paymentBrick_container');
+  if (el) brickObserver.observe(el);
+});
+</script>
+</body>
+</html>
