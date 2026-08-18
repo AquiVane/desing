@@ -536,6 +536,10 @@ footer{
 
       <!-- FORMULARIO DE PAGO -->
       <div class="mpw">
+        <label style="display:flex;align-items:flex-start;gap:.5rem;margin-bottom:1rem;cursor:pointer;">
+          <input type="checkbox" id="privacyCheck" checked required style="width:16px;height:16px;padding:0;margin:2px 0 0;flex-shrink:0;accent-color:var(--r);">
+          <span style="font-size:.78rem;color:var(--m);line-height:1.5;">Acepto la <a href="https://cosmart.com.ar/politica-de-privacidad" target="_blank" style="color:var(--r);">Política de Privacidad</a> de COSMART y consiento recibir comunicaciones del ecosistema COSMART.</span>
+        </label>
         <div class="pay-tabs">
           <button class="pay-tab active" id="tab-mp" onclick="switchTab('mp')">Pesos (ARS)</button>
           <button class="pay-tab" id="tab-pp" onclick="switchTab('pp')">Dólares (USD)</button>
@@ -717,6 +721,12 @@ async function initBrick() {
       callbacks: {
         onReady: () => {},
         onSubmit: ({ formData }) => new Promise(async (resolve, reject) => {
+          const consent = document.getElementById('privacyCheck');
+          if (consent && !consent.checked) {
+            msg.style.color = '#e8192c';
+            msg.textContent = 'Debés aceptar la Política de Privacidad para continuar.';
+            reject(); return;
+          }
           try {
             const pr = await fetch(WORKER_URL + '/pay', {
               method: 'POST',
@@ -771,6 +781,15 @@ function initPayPal() {
         amount: { value: PRECIO_USD.toFixed(2), currency_code: 'USD' }
       }]
     }),
+    onClick: (data, actions) => {
+      const consent = document.getElementById('privacyCheck');
+      if (consent && !consent.checked) {
+        const msg = document.getElementById('ppmsg');
+        if (msg) { msg.style.color = '#e8192c'; msg.textContent = 'Debés aceptar la Política de Privacidad para continuar.'; }
+        return actions.reject();
+      }
+      return actions.resolve();
+    },
     onApprove: (data, actions) => {
       document.getElementById('ppmsg').textContent = '⏳ Procesando...';
       return actions.order.capture().then(async details => {
@@ -1256,6 +1275,11 @@ function mostrarExito(email) {
         </div>
 
         <div id="form-msg" style="display:none;font-family:var(--sans);font-size:.9rem;padding:.65rem 1rem;border-radius:8px"></div>
+
+        <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer">
+          <input type="checkbox" id="privacyCheck" checked required style="width:16px;height:16px;padding:0;margin:2px 0 0;flex-shrink:0;accent-color:#e8192c">
+          <span style="font-family:var(--sans);font-size:.78rem;color:#555;line-height:1.5">Acepto la <a href="https://cosmart.com.ar/politica-de-privacidad" target="_blank" style="color:#e8192c">Política de Privacidad</a> de COSMART y consiento recibir comunicaciones del ecosistema COSMART.</span>
+        </label>
 
         <button type="submit" style="background:#e8192c;color:#fff;border:none;padding:1rem 2rem;font-family:var(--sans);font-weight:700;font-size:1rem;border-radius:8px;cursor:pointer;letter-spacing:.02em;transition:background .2s" onmouseover="this.style.background='#b81220'" onmouseout="this.style.background='#e8192c'">
           Enviar información →

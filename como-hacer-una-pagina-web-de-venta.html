@@ -643,6 +643,11 @@ footer{
           <div id="date-required" style="display:none;font-size:.76rem;color:var(--r);margin-top:.5rem">Seleccioná una fecha para continuar.</div>
         </div>
 
+        <label style="display:flex;align-items:flex-start;gap:.5rem;margin-bottom:1rem;cursor:pointer;">
+          <input type="checkbox" id="privacyCheck" checked required style="width:16px;height:16px;padding:0;margin:2px 0 0;flex-shrink:0;accent-color:var(--r);">
+          <span style="font-size:.78rem;color:var(--m);line-height:1.5;">Acepto la <a href="https://cosmart.com.ar/politica-de-privacidad" target="_blank" style="color:var(--r);">Política de Privacidad</a> de COSMART y consiento recibir comunicaciones del ecosistema COSMART.</span>
+        </label>
+
         <div class="pay-tabs">
           <button class="pay-tab active" id="tab-mp" onclick="switchTab('mp')">Pesos (ARS)</button>
           <button class="pay-tab" id="tab-pp" onclick="switchTab('pp')">Dólares (USD)</button>
@@ -856,6 +861,12 @@ async function initBrick() {
             document.getElementById('date-cards').scrollIntoView({ behavior: 'smooth', block: 'center' });
             reject(); return;
           }
+          const consent = document.getElementById('privacyCheck');
+          if (consent && !consent.checked) {
+            msg.style.color = '#e8192c';
+            msg.textContent = 'Debés aceptar la Política de Privacidad para continuar.';
+            reject(); return;
+          }
           try {
             const pr = await fetch(WORKER_URL + '/pay', {
               method: 'POST',
@@ -923,6 +934,12 @@ function initPayPal() {
       if (!_fechaSeleccionada) {
         document.getElementById('date-required').style.display = 'block';
         document.getElementById('date-cards').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return actions.reject();
+      }
+      const consent = document.getElementById('privacyCheck');
+      if (consent && !consent.checked) {
+        const msg = document.getElementById('ppmsg');
+        if (msg) { msg.style.color = '#e8192c'; msg.textContent = 'Debés aceptar la Política de Privacidad para continuar.'; }
         return actions.reject();
       }
       return actions.resolve();

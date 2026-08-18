@@ -748,10 +748,10 @@ footer{background:#07101f;padding:28px 48px;display:flex;justify-content:space-b
           <label class="ck"><input type="checkbox" name="s" value="Recursos con IA"><span>Recursos con IA</span></label>
         </div>
         <div class="ff"><label class="fl">Tu proyecto</label><textarea id="fmensaje" placeholder="En que etapa esta tu marca? Que necesitas resolver?"></textarea></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;">
-          <input type="checkbox" id="fpriv" required style="width:14px;height:14px;accent-color:var(--r);flex-shrink:0;margin-top:3px;cursor:pointer;">
-          <label for="fpriv" style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.5;cursor:pointer;">Acepto la <a href="#" onclick="event.preventDefault();document.getElementById('privModal').style.display='flex'" style="color:var(--r);text-decoration:underline;">política de privacidad</a> y autorizo el uso de mis datos para recibir la cotización solicitada.</label>
-        </div>
+        <label style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;cursor:pointer;">
+          <input type="checkbox" id="privacyCheck" checked required style="width:14px;height:14px;accent-color:var(--r);flex-shrink:0;margin-top:3px;cursor:pointer;">
+          <span style="font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.5;">Acepto la <a href="https://cosmart.com.ar/politica-de-privacidad" target="_blank" style="color:var(--r);text-decoration:underline;">Política de Privacidad</a> de COSMART y consiento recibir comunicaciones del ecosistema COSMART.</span>
+        </label>
         <button type="submit" class="sbtn" id="sbtn">Quiero mi cotización</button>
         <p class="fnote">Sin spam · Respondemos en menos de 24 h habiles</p>
       </form>
