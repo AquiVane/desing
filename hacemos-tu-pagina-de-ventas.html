@@ -1298,6 +1298,11 @@ function mostrarExito(email) {
 
     const fd = new FormData(this);
     const datos = Object.fromEntries(fd.entries());
+    // mp_medios y carrier son checkboxes de un mismo grupo (se puede marcar
+    // más de uno) — Object.fromEntries pisa todo menos el último marcado,
+    // hay que juntarlos a mano con getAll().
+    datos.mp_medios = fd.getAll('mp_medios');
+    datos.carrier = fd.getAll('carrier');
     datos.emailPago = email;
 
     // Convertir archivos de branding a base64
