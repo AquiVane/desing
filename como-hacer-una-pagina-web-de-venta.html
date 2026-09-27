@@ -139,6 +139,7 @@ nav{
   border-radius:10px;padding:.7rem 1.4rem;margin-bottom:36px;
 }
 .hero-precio-item{text-align:center}
+.hero-precio-tachado{font-family:var(--mono);font-size:.85rem;color:rgba(255,255,255,.3);text-decoration:line-through;display:block;margin-bottom:1px}
 .hero-precio-amt{font-family:var(--mono);font-size:1.3rem;font-weight:700;color:var(--w)}
 .hero-precio-lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-top:2px}
 .hero-precio-sep{font-size:1rem;color:rgba(255,255,255,.15);align-self:center}
@@ -274,6 +275,10 @@ nav{
   font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
   color:rgba(255,255,255,.4);margin-bottom:12px;
 }
+.pcaja-pre-tachado{
+  font-size:1rem;color:rgba(255,255,255,.3);text-decoration:line-through;
+  font-family:var(--mono);margin-bottom:4px;
+}
 .pcaja-pre{
   font-size:2.2rem;font-weight:700;color:var(--w);line-height:1;margin-bottom:4px;
 }
@@ -391,6 +396,7 @@ footer{
 .smob-row{display:flex;justify-content:space-between;align-items:baseline}
 .smob-prices{display:flex;align-items:baseline;gap:.4rem}
 .smob-price{font-family:var(--mono);font-size:1.05rem;font-weight:700;color:#fff}
+.smob-pre{font-family:var(--mono);font-size:.7rem;color:rgba(255,255,255,.3);text-decoration:line-through}
 .smob-price-usd{color:rgba(255,255,255,.75)}
 .smob-unit{font-family:var(--mono);font-size:.56rem;color:rgba(255,255,255,.3)}
 .smob-btn{
@@ -419,7 +425,8 @@ footer{
   </p>
   <div class="hero-precio">
     <div class="hero-precio-item">
-      <span class="hero-precio-amt">$690.000</span>
+      <span class="hero-precio-tachado">$690.000</span>
+      <span class="hero-precio-amt">$400.000</span>
       <span class="hero-precio-lbl">pesos argentinos</span>
     </div>
     <span class="hero-precio-sep">·</span>
@@ -609,7 +616,8 @@ footer{
 
         <!-- ARS -->
         <div id="ars-price">
-          <div class="pcaja-pre" id="price-main-ars">$690.000</div>
+          <div class="pcaja-pre-tachado" id="price-main-ars-tachado">$690.000</div>
+          <div class="pcaja-pre" id="price-main-ars">$400.000</div>
           <div class="pcaja-sub">pesos argentinos · pago único</div>
         </div>
 
@@ -737,7 +745,8 @@ footer{
   <div class="smob-row">
     <div>
       <div class="smob-prices">
-        <span class="smob-price">$690.000</span>
+        <span class="smob-pre">$690.000</span>
+        <span class="smob-price">$400.000</span>
       </div>
       <div class="smob-unit">pesos argentinos</div>
     </div>
@@ -876,7 +885,7 @@ async function initBrick() {
             const data = await pr.json();
             if (data.status === 'approved') {
               const email = formData?.payer?.email || '';
-              await notificarCompra(email, '', 'mercadopago', '$690.000 ARS');
+              await notificarCompra(email, '', 'mercadopago', '$400.000 ARS');
               mostrarExito(email);
             } else if (data.status === 'in_process' || data.status === 'pending') {
               msg.style.color = '#e6a817';
