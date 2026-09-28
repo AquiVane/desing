@@ -2,6 +2,10 @@
 
 Actualizado: 2026-09-01. Léelo antes de tocar código en este repo. El backend de los formularios vive en `AquiVane/cosmart-workers`, worker `cosmart-design` — ver su propio `HANDOFF.md` si lo hay, si no, revisar `workers/cosmart-design/src/index.js` directo (está comentado).
 
+## SEO: `og:image` rota en las 3 páginas del sitio (28/09)
+
+Auditoría SEO por vertical (pedido de Vaneh, skill `seo-strategy`): las 3 páginas (`index.html`, `hacemos-tu-pagina-de-ventas.html`, `como-hacer-una-pagina-web-de-venta.html`) tenían el `og:image` apuntando a archivos que **no existen en el repo** (`/og-design.png`, `/og-taller.jpg`, `/og-paginas-de-venta.jpg`) -- cero preview al compartir cualquiera de estas 3 páginas en WhatsApp/Instagram/LinkedIn. Se corrigió apuntando las 3 al archivo real que ya existía sin uso: `images/cosmart-design-preview.png`. El resto del SEO técnico (robots, canonical, hreflang, Twitter Card, Schema.org) ya estaba completo, no se tocó nada más. Si en algún momento Vaneh quiere una imagen de preview distinta para cada una de las 3 páginas (en vez de la genérica compartida), avisar para generarlas.
+
 ## Formulario de cotización migrado de Formspree a Cloudflare (01/09)
 
 `#mainForm` (sección "Cotizá tu proyecto") mandaba directo a `formspree.io/f/xpqnagap` — sin pasar por Brevo ni por COSMART, no quedaba ningún registro del lado nuestro. Mismo problema que tenían Shows/ComuniCOS/Rumbo Voraz antes de su propia migración (ver comentario "ex-Formspree" en `cosmart-design/src/index.js`). Ahora manda a `POST https://cosmart-design.conglomeradocosmart.workers.dev/design/contacto` (`handleDesignContacto`), que dispara un mail interno a Vaneh y Ger con todos los datos (mismo patrón que `/design/compra` y `/taller/compra`, que sí siempre mandaron por acá).
