@@ -846,6 +846,8 @@ const brickMP = CTPago.brick({
   crear: () => new Promise(async (resolveReady, rejectReady) => {
   const msg = document.getElementById('mpmsg');
   try {
+    let json = {}, preference_id = null;
+    if (CTPago.modo() === 'pref') { // los modos de respaldo no necesitan preferencia
     const ctrl = new AbortController();
     const tmo = setTimeout(() => ctrl.abort(), 15000);
     const r = await fetch(WORKER_URL + '/preference', {
@@ -855,10 +857,11 @@ const brickMP = CTPago.brick({
       signal: ctrl.signal
     });
     clearTimeout(tmo);
-    const json = await r.json();
+    json = await r.json();
     if (!json.preference_id) throw new Error('No preference_id');
+    }
 
-    const mp = new MercadoPago(MP_PUBLIC_KEY, { locale: 'es-AR' });
+    const mp = CTPago.adaptar(new MercadoPago(MP_PUBLIC_KEY, { locale: 'es-AR' }));
     let controller = null;
     controller = await mp.bricks().create('payment', 'paymentBrick_container', {
       initialization: { amount: PRECIO_ARS, preferenceId: json.preference_id },
