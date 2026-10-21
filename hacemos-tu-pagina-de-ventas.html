@@ -1335,13 +1335,9 @@ function mostrarExito(email) {
   });
 }
 
-// ── INIT BRICK cuando entra en pantalla ──
-const brickObserver = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) { initBrick(); brickObserver.disconnect(); }
-}, { threshold: 0.1 });
+// ── INIT BRICK: apenas carga la página (no espera al scroll) ──
 document.addEventListener('DOMContentLoaded', () => {
-  const el = document.getElementById('paymentBrick_container');
-  if (el) brickObserver.observe(el);
+  if (document.getElementById('paymentBrick_container')) initBrick();
 });
 </script>
 <script defer src="https://cosmart.com.ar/cookie-banner.js"></script>
