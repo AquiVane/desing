@@ -2,6 +2,9 @@
 
 Actualizado: 2026-09-01. Léelo antes de tocar código en este repo. El backend de los formularios vive en `AquiVane/cosmart-workers`, worker `cosmart-design` — ver su propio `HANDOFF.md` si lo hay, si no, revisar `workers/cosmart-design/src/index.js` directo (está comentado).
 
+## 26/10 — Alarma de clon (pedido de Vaneh)
+- Todas las páginas HTML llevan, justo después del `<meta charset>` del `<head>`, un `<script data-anticlon>`: si la página se muestra desde un dominio que no es el oficial (ni uno de los `*.pages.dev` propios), corta la carga, reemplaza todo por un cartel "ATENCIÓN: esta NO es la página oficial de …" con botón a la oficial, y avisa pidiendo `<oficial>/_clon/<dominio-del-clon>` (aparece como 404 en Analíticas de Cloudflare → rutas más pedidas). **No sacarlo ni tocarlo; toda página HTML nueva tiene que llevarlo** (si hace falta, correr de nuevo el script que lo inserta o copiar el bloque de otra página del mismo repo).
+
 ## SEO: `og:image` rota en las 3 páginas del sitio (28/09)
 
 Auditoría SEO por vertical (pedido de Vaneh, skill `seo-strategy`): las 3 páginas (`index.html`, `hacemos-tu-pagina-de-ventas.html`, `como-hacer-una-pagina-web-de-venta.html`) tenían el `og:image` apuntando a archivos que **no existen en el repo** (`/og-design.png`, `/og-taller.jpg`, `/og-paginas-de-venta.jpg`) -- cero preview al compartir cualquiera de estas 3 páginas en WhatsApp/Instagram/LinkedIn. Se corrigió apuntando las 3 al archivo real que ya existía sin uso: `images/cosmart-design-preview.png`. El resto del SEO técnico (robots, canonical, hreflang, Twitter Card, Schema.org) ya estaba completo, no se tocó nada más. Si en algún momento Vaneh quiere una imagen de preview distinta para cada una de las 3 páginas (en vez de la genérica compartida), avisar para generarlas.
