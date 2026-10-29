@@ -777,6 +777,12 @@ document.querySelectorAll('.fi').forEach(el => {
 
 // ── CONSTANTES ──
 const WORKER_URL   = 'https://mp-productos-ganadores.conglomeradocosmart.workers.dev';
+// Registro de ventas de COSMART: este checkout vende SIEMPRE este producto (vertical Design). Va en el pago de MP (/preference y /pay) y la venta de PayPal se anota con la orden verificada.
+const PRODUCTO_VENTA = 'desing-pagina-web-de-venta';
+function ctVentaPaypal(orderID) {
+  if (!orderID) return;
+  try { fetch('https://cosmart-training-core.conglomeradocosmart.workers.dev/ventas/paypal-servicio', { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true, body: JSON.stringify({ orderID, slug: PRODUCTO_VENTA }) }).catch(() => {}); } catch (e) {}
+}
 // Casilla de newsletter del checkout (tildada por defecto). MP: viaja en /pay y se suscribe con el pago aprobado. PayPal: el servidor verifica la orden y usa el mail de PayPal.
 function ctNewsletterOk() { const c = document.getElementById('ctNewsletter'); return !c || c.checked; }
 function ctNewsletterPaypal(orderID) {
@@ -861,7 +867,7 @@ const brickMP = CTPago.brick({
     const r = await fetch(WORKER_URL + '/preference', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount: PRECIO_ARS }),
+      body: JSON.stringify({ amount: PRECIO_ARS, producto: PRODUCTO_VENTA }),
       signal: ctrl.signal
     });
     clearTimeout(tmo);
@@ -895,7 +901,7 @@ const brickMP = CTPago.brick({
             const pr = await fetch(WORKER_URL + '/pay', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ ...formData, newsletter: ctNewsletterOk() })
+              body: JSON.stringify({ ...formData, producto: PRODUCTO_VENTA, newsletter: ctNewsletterOk() })
             });
             const data = await pr.json();
             if (data.status === 'approved') {
@@ -962,6 +968,7 @@ function montarPayPal() {
       document.getElementById('ppmsg').textContent = '⏳ Procesando...';
       return actions.order.capture().then(async details => {
         ctNewsletterPaypal(data.orderID);
+        ctVentaPaypal(data.orderID);
         const email = details.payer?.email_address || '';
         const nombre = details.payer?.name?.given_name || '';
         await notificarCompra(email, nombre, 'paypal', 'USD 497');
