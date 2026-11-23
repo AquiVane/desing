@@ -283,6 +283,8 @@ nav{
 .pcaja-pre{
   font-size:2.2rem;font-weight:700;color:var(--w);line-height:1;margin-bottom:4px;
 }
+.pcaja-usdref{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px}
+.pcaja-usdref small{font-weight:400;color:rgba(255,255,255,.7);font-size:.78rem}
 .pcaja-sub{
   font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;
   color:rgba(255,255,255,.35);margin-bottom:20px;
@@ -620,6 +622,7 @@ footer{
         <div id="ars-price">
           <div class="pcaja-pre-tachado" id="price-main-ars-tachado">$690.000</div>
           <div class="pcaja-pre" id="price-main-ars">$400.000</div>
+          <div class="pcaja-usdref">o <span id="ars-usdref-val">USD 497</span> <small>si pagás en dólares (PayPal)</small></div>
           <div class="pcaja-sub">pesos argentinos · pago único</div>
         </div>
 
@@ -1008,5 +1011,6 @@ function mostrarExito(email) {
 }
 </script>
 <script defer src="https://cosmart.com.ar/cookie-banner.js"></script>
+<script>(function(){var s=document.getElementById('price-main-usd'),d=document.getElementById('ars-usdref-val');if(!s||!d)return;function f(){d.textContent=s.textContent.trim()}f();new MutationObserver(f).observe(s,{childList:true,characterData:true,subtree:true});})();</script>
 </body>
 </html>
